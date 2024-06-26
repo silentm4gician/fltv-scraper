@@ -41,7 +41,11 @@ interface UrlObject {
 
 async function getLink(url: UrlObject, browser: ChromiumBrowser): Promise<string> {
   const page = await browser.newPage();
-  await page.goto(url.url);
+  if (url.url === undefined) {
+    return 'no link yet'
+  } else {
+    await page.goto(url.url)
+  }
   await page.waitForSelector('div[class="container"]');
 
   const results: string = await page.evaluate(() => {

@@ -10,7 +10,7 @@ npm i @silent_m4gician/ftv-scraper
 ```
 
 ```javascript
-const { getData } = require("@silent_m4gician/ftv-scraper");
+import { getData } from "@silent_m4gician/ftv-scraper"
 
 const getMatches = async () =>{
   const matches = await getData()

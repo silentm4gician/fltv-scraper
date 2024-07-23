@@ -8,7 +8,7 @@ interface Match {
 
 async function getMatches(browser: ChromiumBrowser): Promise<Match[]> {
   const page = await browser.newPage();
-  await page.goto('https://futbollibretv.tv/agenda.html');
+  await page.goto('https://www.pelotalibretv.com/agenda.html');
   await page.waitForSelector('div[id="wraper"]');
 
   const results: Match[] = await page.evaluate(() => {
